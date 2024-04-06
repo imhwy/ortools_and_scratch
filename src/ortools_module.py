@@ -1,6 +1,7 @@
 # import libraries
 from ortools.algorithms.python import knapsack_solver
 
+
 class OrtoolSolver:
     def __init__(self, solver, values, weights, capacities):
         self.values = values
@@ -12,7 +13,7 @@ class OrtoolSolver:
         self.solver.init(self.values, self.weights, self.capacities)
         computed_value = self.solver.solve()
         return computed_value
-    
+
     def packed_weights(self):
         packed_items = []
         packed_weights = []
@@ -23,4 +24,3 @@ class OrtoolSolver:
                 packed_weights.append(self.weights[0][i])
                 total_weight += self.weights[0][i]
         return total_weight
-    
